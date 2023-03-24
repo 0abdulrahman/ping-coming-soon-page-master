@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;500;600;700&display=swap");
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  font-size: 20px;
+  padding: 5rem 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+body header {
+  margin-bottom: 2rem;
+}
+body main {
+  max-width: 640px;
+}
+body main h1 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+body main .text {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  text-align: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+}
+body main .text h2 {
+  font-size: calc(20px + 1.4em);
+  font-weight: 300;
+  color: hsl(0, 0%, 59%);
+}
+body main .text h2 span {
+  font-weight: 700;
+  color: #000;
+}
+body main .text p {
+  margin-bottom: 1.5em;
+  font-weight: 300;
+}
+body main .text form {
+  display: flex;
+  gap: 0.75em;
+  margin-bottom: 4rem;
+}
+body main .text form .email input,
+body main .text form input[type=submit] {
+  padding: 1em 2em;
+  border-radius: 50px;
+  font-size: 0.75em;
+  font-family: inherit;
+}
+body main .text form .email {
+  flex: 1;
+}
+body main .text form .email input {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: 0.2s;
+  caret-color: hsl(223, 87%, 63%);
+  font-weight: 300;
+}
+body main .text form .email input::-moz-placeholder {
+  color: hsl(0, 0%, 59%);
+}
+body main .text form .email input::placeholder {
+  color: hsl(0, 0%, 59%);
+}
+body main .text form .email input:focus {
+  border: 1px solid hsl(223, 87%, 70%);
+  outline: none;
+}
+body main .text form .email[data-error] {
+  position: relative;
+}
+body main .text form .email[data-error] input {
+  border-color: hsl(354, 100%, 66%);
+}
+body main .text form .email[data-error]::after {
+  position: absolute;
+  content: "Please provide a valid email address";
+  font-style: italic;
+  bottom: -2em;
+  left: 2em;
+  font-size: calc(20px - 0.4em);
+  font-weight: 500;
+  color: hsl(354, 100%, 66%);
+}
+body main .text form input[type=submit] {
+  border: none;
+  background-color: hsl(223, 87%, 63%);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 1em 3.75em;
+  box-shadow: 0 5px 20px rgba(16, 49, 182, 0.3);
+  transition: 0.2s;
+}
+body main .text form input[type=submit]:hover {
+  background-color: hsl(223, 87%, 70%);
+}
+body main .copyrights {
+  margin-bottom: 2em;
+}
+body main .copyrights .socials {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5em;
+}
+body main .copyrights .socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: hsl(223, 87%, 63%);
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 0.75em;
+  height: 30px;
+  width: 30px;
+  transition: 0.2s;
+}
+body main .copyrights .socials a:hover {
+  background-color: hsl(223, 87%, 63%);
+  color: #fff;
+  border-color: hsl(223, 87%, 63%);
+}
+body main .copyrights p {
+  text-align: center;
+  font-size: 0.6em;
+  font-weight: 300;
+  color: hsl(0, 0%, 59%);
+}
+@media only screen and (max-width: 680px) {
+  body header {
+    margin-bottom: 2rem;
+  }
+  body header img {
+    width: 60px;
+  }
+  body main .text {
+    margin-bottom: 8rem;
+  }
+  body main .text h2 {
+    font-size: calc(20px + 0.25em);
+    margin-bottom: 0.5rem;
+  }
+  body main .text p {
+    font-size: calc(20px - 0.25em);
+  }
+  body main .text form {
+    flex-direction: column;
+    justify-content: center;
+  }
+  body main .text form .email[data-error] {
+    margin-bottom: 2em;
+  }
+  body main .text form .email[data-error]::after {
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+  }
+  body main .text img {
+    width: 100%;
+    transform: scale(1.15);
+  }
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 20px;
+  width: 100%;
+  font-weight: 400;
+}
+
+footer a {
+  color: hsl(223, 87%, 63%);
+}/*# sourceMappingURL=main.css.map */

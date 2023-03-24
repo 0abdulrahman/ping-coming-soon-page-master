@@ -1,0 +1,194 @@
+@use "../variables/colors" as *;
+@use "../variables/media" as *;
+@use "../variables/font" as *;
+@use "../helpers/mixins" as *;
+
+body {
+  min-height: 100vh;
+  font-size: $font-size;
+  padding: 5rem 3rem;
+  @include center;
+  flex-direction: column;
+  header {
+    margin-bottom: 2rem;
+  }
+  main {
+    max-width: 640px;
+    h1 {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+    .text {
+      @include flex-sb;
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+      margin-bottom: 5rem;
+      h2 {
+        font: {
+          size: calc($font-size + 1.4em);
+          weight: 300;
+        }
+        color: $gray;
+        span {
+          font-weight: 700;
+          color: $black;
+        }
+      }
+      p {
+        margin-bottom: 1.5em;
+        font-weight: 300;
+      }
+      form {
+        display: flex;
+        gap: 0.75em;
+        margin-bottom: 4rem;
+        .email input,
+        input[type="submit"] {
+          padding: 1em 2em;
+          border-radius: 50px;
+          font: {
+            size: 0.75em;
+            family: inherit;
+          }
+        }
+        .email {
+          flex: 1;
+          input {
+            width: 100%;
+            border: 1px solid $transperant_gray;
+            transition: 0.2s;
+            caret-color: $blue;
+            font-weight: 300;
+            &::placeholder {
+              color: $gray;
+            }
+            &:focus {
+              border: 1px solid $slightly_pale_blue;
+              outline: none;
+            }
+          }
+          &[data-error] {
+            input {
+              border-color: $light_red;
+            }
+            position: relative;
+            &::after {
+              position: absolute;
+              content: "Please provide a valid email address";
+              font-style: italic;
+              bottom: -2em;
+              left: 2em;
+              font: {
+                size: calc($font-size - 0.4em);
+                weight: 500;
+              }
+              color: $light_red;
+            }
+          }
+        }
+        input[type="submit"] {
+          border: none;
+          background-color: $blue;
+          color: $white;
+          font-weight: 600;
+          cursor: pointer;
+          padding: 1em 3.75em;
+          box-shadow: 0 5px 20px $blue_shadow;
+          transition: 0.2s;
+          &:hover {
+            background-color: $slightly_pale_blue;
+          }
+        }
+      }
+    }
+    .copyrights {
+      margin-bottom: 2em;
+      .socials {
+        @include center;
+        gap: 0.75rem;
+        margin-bottom: 1.5em;
+        a {
+          @include center;
+          color: $blue;
+          border-radius: 50%;
+          border: 1px solid $transperant_gray;
+          font-size: 0.75em;
+          height: 30px;
+          width: 30px;
+          transition: 0.2s;
+          &:hover {
+            background-color: $blue;
+            color: $white;
+            border-color: $blue;
+          }
+        }
+      }
+      p {
+        text-align: center;
+        font: {
+          size: 0.6em;
+          weight: 300;
+        }
+        color: $gray;
+      }
+    }
+  }
+  @include media("mobile") {
+    header {
+      margin-bottom: 2rem;
+      img {
+        width: 60px;
+      }
+    }
+    main {
+      .text {
+        margin-bottom: 8rem;
+        h2 {
+          font-size: calc($font-size + 0.25em);
+          margin-bottom: 0.5rem;
+        }
+        p {
+          font-size: calc($font-size - 0.25em);
+        }
+        form {
+          flex-direction: column;
+          justify-content: center;
+          .email {
+            &[data-error] {
+              margin-bottom: 2em;
+              &::after {
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+              }
+            }
+          }
+        }
+        img {
+          width: 100%;
+          transform: scale(1.15);
+        }
+      }
+    }
+  }
+}
+
+footer {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.2;
+  padding: 20px;
+  width: 100%;
+  font-weight: 400;
+}
+footer a {
+  color: $blue;
+}
